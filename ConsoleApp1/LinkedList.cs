@@ -11,6 +11,7 @@ namespace projectLinkedList
         /// Первый элемент списка
         /// </summary>
         public Item<T> Head { get; private set; }
+
         /// <summary>
         /// Последний элемент списка
         /// </summary>
@@ -26,9 +27,7 @@ namespace projectLinkedList
         /// </summary>
         public LinkedList()
         {
-            Head = null;
-            Tail = null;
-            Count = 0;
+            Clear();
         }
 
         /// <summary>
@@ -89,6 +88,29 @@ namespace projectLinkedList
                     current = current.Next;
                 }
             }
+        }
+
+        /// <summary>
+        /// Добавить данные в начало списка
+        /// </summary>
+        public void AppendHead(T data)
+        {
+            var item = new Item<T>(data);
+            {
+                item.Next = Head;
+            }
+            Head = item;
+            Count++;
+        }
+
+        /// <summary>
+        /// Очистить списк
+        /// </summary>
+        public void Clear()
+        {
+            Head = null;
+            Tail = null;
+            Count = 0;
         }
 
         private void SetHeadAndTail(T data)

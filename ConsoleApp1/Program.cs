@@ -19,11 +19,13 @@ namespace projectLinkedList
             list.Add(5);
             list.Add(2);
             list.Delete(2);
+            list.AppendHead(12);
 
-            foreach(var item in list)
+            foreach (var item in list)
             {
                 Console.WriteLine(item + " ");
             }
+
             Console.ReadLine();
         }
     }
